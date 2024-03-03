@@ -1,0 +1,39 @@
+.HomeHeader {
+  // background-image: url("../../../../public/newsletter.jpg");
+  // height: 100vh;
+  .phoneImg {
+    animation: move 3s infinite ease alternate;
+  }
+
+  @keyframes move {
+    from {
+      transform: translateY(-15px);
+    }
+
+    // to {
+    //   transform: translateY(0px) scale(1.03);
+    // }
+  }
+}
+
+@media (max-width: 600px) {
+  .HomeHeader {
+    // height: 100vh;
+
+    // .py-24 {
+    // }
+
+    .text {
+      margin-top: 5%;
+
+      .ImgMe {
+        width: 300px;
+      }
+    }
+    .pl-3 {
+      padding-left: 2%;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
