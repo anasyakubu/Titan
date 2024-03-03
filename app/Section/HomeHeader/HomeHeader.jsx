@@ -8,7 +8,7 @@ import { Button } from "../../../components/ui/button";
 
 import NYM from "../../assets/nym.png";
 import Proptter from "../../assets/logo.png";
-import Img from "../../assets/ai-logo.svg";
+import Img from "../../assets/frame-1.png";
 import Vercel from "../../../public/vercel.svg";
 
 // #f2f7f8 bg
@@ -31,24 +31,26 @@ const HomeHeader = () => {
                   className="text-2xl font-extrabold tracking-wide shadow-2 sm:text-3xl"
                   style={{ color: "#000" }} //#122231
                 >
-                  Host, Connect, Celebrate: Your Events, Our Platform!
+                  Custom AI Tools for{" "}
+                  <span className="underline">Everyone</span>.
                 </h1>
                 <p
                   className="mt-4 text-sm leading-6"
                   style={{ color: "#122231" }} //#3d4f60 122231
                 >
-                  Welcome to Events, the premier destination for hosting and
-                  discovering amazing events! Whether you`re planning a concert,
-                  workshop, conference, or any other gathering, we`ve got you
-                  covered. Start exploring now and bring your event ideas to
-                  life!
+                  Transform Your Expertise Into Unique AI Tools. Craft Custom AI
+                  Tools to Share Your Knowledge and Empower You and Your
+                  Clients. Our AI Builder`s easy-to-use interface makes building
+                  AI tools enjoyable, even for non-technical Prompt Engineers.
+                  The dedicated support team is available for troubleshooting
+                  and guidance, helping users overcome technical obstacle
                 </p>
               </div>
               <div className="flex mt-10">
                 {/* <button className="bg-transparent text-gray-900 ml-3 font-semibold border text-sm p-2 m-1 rounded-sm border-black">
                 Feel the Innovation
               </button> */}
-                <Button>Explore Now</Button>
+                <Button>Get Started Now</Button>
               </div>
             </div>
             <div className="text-center flex justify-center items-center">
