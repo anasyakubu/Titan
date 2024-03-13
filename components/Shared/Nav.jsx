@@ -1,89 +1,114 @@
-import React from "react";
+"use client";
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import Logo from "../../public/next.svg";
 
-const Nav = () => {
+const navigation = [
+  { name: "Home", href: "#" },
+  { name: "Ask", href: "#" },
+  { name: "Prompts", href: "#" },
+  { name: "Paraphrase", href: "#" },
+  { name: "Contact", href: "#" },
+];
+
+export default function Nav() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <div className="Nav">
-      <div className="navbar bg-transparent">
-        <div className="navbar-start">
-          {/* Mobile */}
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white text-black rounded-box w-52"
-            >
-              {/* <NavigationMenuNav /> */}
-              <li>
-                <Link href="">Home</Link>
-              </li>
+    <div className="bg-transparent">
+      <header className="inset-x-0 top-0 z-50">
+        <nav
+          className="flex items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
+        >
+          <div className="flex lg:flex-1">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
 
-              <li>
-                <Link href="">FAQ</Link>
-              </li>
-
-              <li>
-                <Link href="">Prompts</Link>
-              </li>
-
-              <li>
-                <Link href="">Ask</Link>
-              </li>
-
-              <li>
-                <Link href="">Item</Link>
-              </li>
-            </ul>
+              <Image className="h-8 w-auto" src={Logo} alt="Logo" />
+            </a>
           </div>
-          <Link href="/" className="btn btn-ghost text-xl">
-            Titan AI
-          </Link>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          {/* <NavigationMenuNav /> */}
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-
-            <li>
-              <Link href="/">FAQ</Link>
-            </li>
-            <li>
-              <Link href="/">Prompts</Link>
-            </li>
-            <li>
-              <Link href="/">Ask</Link>
-            </li>
-            <li>
-              <Link href="/">Contact</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="navbar-end">
-          <Link href="/">
-            <Button>Login</Button>
-          </Link>
-        </div>
-      </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-black"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-black"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a
+              href="#"
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              Log in <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </nav>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+        >
+          <div className="fixed inset-0 z-50" />
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="flex items-center justify-between">
+              <a href="#" className="-m-1.5 p-1.5">
+                <span className="sr-only">Your Company</span>
+                <Image className="h-12 w-auto" src={Logo} alt="Logo" />
+              </a>
+              <button
+                type="button"
+                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-500/10">
+                <div className="space-y-2 py-6">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+                <div className="py-6">
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Log in
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Dialog.Panel>
+        </Dialog>
+      </header>
     </div>
   );
-};
-
-export default Nav;
+}

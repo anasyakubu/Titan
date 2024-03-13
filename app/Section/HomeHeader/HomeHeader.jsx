@@ -15,7 +15,7 @@ import Vercel from "../../../public/vercel.svg";
 // #3d4f60 text
 const HomeHeader = () => {
   return (
-    <div className="inset-0 -z-10  bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+    <div className="inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
       <div
         className="HomeHeader"
         // style={{ backgroundColor: "#f2f7f8", color: "#3d4f60" }}
