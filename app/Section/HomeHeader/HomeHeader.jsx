@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "@/components/Shared/Nav";
+import Nav from "../../../components/Shared/Nav";
 import "./HomeHeader.scss";
 import Image from "next/image";
 

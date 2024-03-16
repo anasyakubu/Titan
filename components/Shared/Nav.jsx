@@ -4,12 +4,13 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../public/next.svg";
+import Logo from "../../app/assets/ai-logo.png";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const navigation = [
   { name: "Home", href: "#" },
   { name: "Ask", href: "#" },
-  { name: "Prompts", href: "#" },
+  { name: "Prompts", href: "/Prompt" },
   { name: "Paraphrase", href: "#" },
   { name: "Contact", href: "#" },
 ];
@@ -28,7 +29,7 @@ export default function Nav() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
 
-              <Image className="h-8 w-auto" src={Logo} alt="Logo" />
+              <Image className="h-16 w-auto" src={Logo} alt="Logo" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -53,12 +54,15 @@ export default function Nav() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+            <UserButton afterSignOutUrl="/" />
+            <SignedOut>
+              <a
+                href="sign-in"
+                className="text-sm font-semibold leading-6 text-gray-900"
+              >
+                Log in <span aria-hidden="true">&rarr;</span>
+              </a>
+            </SignedOut>
           </div>
         </nav>
         <Dialog

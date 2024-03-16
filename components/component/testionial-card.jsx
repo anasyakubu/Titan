@@ -6,7 +6,7 @@ import {
   CardContent,
   CardHeader,
   Card,
-} from "@/components/ui/card";
+} from "../ui/card";
 import Image from "next/image";
 import User from "../../app/assets/user-1.jpg";
 
