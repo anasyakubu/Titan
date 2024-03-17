@@ -1,7 +1,12 @@
 import React from "react";
+import PromptHeader from "../Section/PromptHeader/PromptHeader";
 
 const Prompt = () => {
-  return <div>Prompt</div>;
+  return (
+    <div className="Prompt">
+      <PromptHeader />
+    </div>
+  );
 };
 
 export default Prompt;

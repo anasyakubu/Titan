@@ -8,7 +8,7 @@ import Logo from "../../app/assets/ai-logo.png";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const navigation = [
-  { name: "Home", href: "#" },
+  { name: "Home", href: "/" },
   { name: "Ask", href: "#" },
   { name: "Prompts", href: "/Prompt" },
   { name: "Paraphrase", href: "#" },
@@ -101,12 +101,16 @@ export default function Nav() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
+                  <SignedOut>
+                    <a
+                      href="sign-in"
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      Log in
+                    </a>
+                  </SignedOut>
+
+                  <UserButton afterSignOutUrl="/" />
                 </div>
               </div>
             </div>
