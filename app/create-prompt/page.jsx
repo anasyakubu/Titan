@@ -1,49 +1,29 @@
-"use client";
-import React from "react";
+import React, { useState } from "react";
 import Nav from "../../components/Shared/Nav";
 import Form from "../../components/Shared/Form";
-import {
-  collection,
-  addDoc,
-  // getDocs,
-  // querySnapshot,
-  // query,
-  // onSnapshot,
-  // doc,
-  // deleteDoc,
-} from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firestore";
 import { useUser } from "@clerk/nextjs";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router"; // Import from 'next/router' instead of 'next/navigation'
 
 const CreatePrompt = () => {
   const { isLoaded, isSignedIn, user } = useUser();
-  console.log(user);
-
-  if (!isLoaded || !isSignedIn) {
-    return null;
-  }
-
   const router = useRouter();
 
   const [submitting, setIsSubmitting] = useState(false);
   const [post, setPost] = useState({ prompt: "", tag: "" });
 
+  if (!isLoaded || !isSignedIn) {
+    return null;
+  }
+
   const createPrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // alert(post.prompt);
-    // alert(post.tag);
-    // alert(user.imageUrl);
-
     try {
-      // const addItem = async (e) => {
-      //   e.preventDefault();
       if (post.prompt !== "" && post.tag !== "") {
-        //setItems([...items, newItems]);
-        addDoc(collection(db, "prompts"), {
+        await addDoc(collection(db, "prompts"), {
           prompt: post.prompt,
           tag: post.tag,
           creatorID: user.id,
@@ -53,11 +33,9 @@ const CreatePrompt = () => {
           creatorEmail: user.email,
           creatorPhotoUrl: user.imageUrl,
         });
-        // setNewItems({ name: "", price: "" });
         alert("Successful");
         router.push("/Prompt");
       }
-      // };
     } catch (error) {
       console.log(error);
     } finally {
