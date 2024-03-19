@@ -5,13 +5,13 @@ import Form from "../../components/Shared/Form";
 import {
   collection,
   addDoc,
-  getDocs,
-  querySnapshot,
-  query,
-  onSnapshot,
-  doc,
-  deleteDoc,
-} from "../firebase/firestore";
+  // getDocs,
+  // querySnapshot,
+  // query,
+  // onSnapshot,
+  // doc,
+  // deleteDoc,
+} from "firebase/firestore";
 import { db } from "../firebase/firestore";
 import { useUser } from "@clerk/nextjs";
 import { useState } from "react";
