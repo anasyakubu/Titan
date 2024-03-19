@@ -1,13 +1,18 @@
+"use client";
 import React, { useState } from "react";
 import Nav from "../../components/Shared/Nav";
 import Form from "../../components/Shared/Form";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firestore";
 import { useUser } from "@clerk/nextjs";
-import { useRouter } from "next/router"; // Import from 'next/router' instead of 'next/navigation'
+import { useRouter } from "next/navigation";
 
 const CreatePrompt = () => {
   const { isLoaded, isSignedIn, user } = useUser();
+  //console.log(user.emailAddresses[0].emailAddress);
+  // console.log(user.emailAddresses.emailAddress);
+  //console.log(user.lastSignInAt);
+
   const router = useRouter();
 
   const [submitting, setIsSubmitting] = useState(false);
@@ -30,7 +35,7 @@ const CreatePrompt = () => {
           creatorName: user.fullName,
           creatorUsername: user.username,
           lastSignInAt: user.lastSignInAt,
-          creatorEmail: user.email,
+          creatorEmail: user.emailAddresses[0].emailAddress,
           creatorPhotoUrl: user.imageUrl,
         });
         alert("Successful");
