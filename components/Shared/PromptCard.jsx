@@ -11,13 +11,13 @@ import Image from "next/image";
 import User from "../../app/assets/user-1.jpg";
 import Copy from "../../app/assets/copy.svg";
 
-function PromptCard() {
+function PromptCard({ name, images, email, promptText }) {
   return (
     <Card className="w-full max-w-sm mt-5">
       <CardHeader className="p-6 flex items-start gap-6">
         <div className="rounded-full overflow-hidden border-2 border-foreground">
           <Image
-            src={User}
+            src={images}
             alt="User"
             className="rounded-full"
             height={48}
@@ -31,10 +31,8 @@ function PromptCard() {
         </div>
         <CardContent className="p-0 flex-1">
           <div className="grid gap-1.5">
-            <CardTitle className="text-base">Anas Yakubu</CardTitle>
-            <CardDescription className="text-xs">
-              yakubuanas04@gmail.com
-            </CardDescription>
+            <CardTitle className="text-base">{name}</CardTitle>
+            <CardDescription className="text-xs">{email}</CardDescription>
           </div>
           <div className="flex items-center gap-2">
             <StarIcon className="w-4 h-4 fill-primary" />
@@ -49,10 +47,7 @@ function PromptCard() {
         </CardContent>
       </CardHeader>
       <CardContent className="p-6 text-sm border-t">
-        <p>
-          I really enjoyed my experience with the product. It was easy to use
-          and helped me save time on my daily tasks.
-        </p>
+        <p>{promptText}</p>
         <p className="mt-5">
           <Image className="" src={Copy} alt="Copy" />
         </p>
