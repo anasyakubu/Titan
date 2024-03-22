@@ -34,7 +34,7 @@ function PromptCard({ name, images, email, promptText }) {
             <CardTitle className="text-base">{name}</CardTitle>
             <CardDescription className="text-xs">{email}</CardDescription>
           </div>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <StarIcon className="w-4 h-4 fill-primary" />
             <StarIcon className="w-4 h-4 fill-primary" />
             <StarIcon className="w-4 h-4 fill-primary" />
@@ -43,7 +43,7 @@ function PromptCard({ name, images, email, promptText }) {
             <span className="text-sm ml-auto text-gray-500 dark:text-gray-400">
               3.2
             </span>
-          </div>
+          </div> */}
         </CardContent>
       </CardHeader>
       <CardContent className="p-6 text-sm border-t">
