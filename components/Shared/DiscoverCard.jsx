@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import chatgpt from "../../app/assets/chatgpt.jpg";
+// import chatgpt from "../../app/assets/chatgpt.jpg";
 import Link from "next/link";
 import { GoLinkExternal } from "react-icons/go";
 
-const DiscoverCard = ({ title, text, link, subtitle }) => {
+const DiscoverCard = ({ title, text, link, subtitle, img }) => {
   return (
     <div className="DiscoverCard">
       <div className="p-3">
@@ -13,7 +13,7 @@ const DiscoverCard = ({ title, text, link, subtitle }) => {
           <div className="">
             <Image
               className="w-full h-full rounded-2xl shadow-sm"
-              src={chatgpt}
+              src={img}
               alt="Chatgpt"
             />
           </div>

@@ -2,8 +2,7 @@ import React from "react";
 import Nav from "../../../components/Shared/Nav";
 import "./HomeHeader.scss";
 import Image from "next/image";
-
-// import { CarouselOne } from "@/components/Shared/CarouselHeader";
+import Link from "next/link";
 import { Button } from "../../../components/ui/button";
 
 import NYM from "../../assets/nym.png";
@@ -47,10 +46,9 @@ const HomeHeader = () => {
                 </p>
               </div>
               <div className="flex mt-10">
-                {/* <button className="bg-transparent text-gray-900 ml-3 font-semibold border text-sm p-2 m-1 rounded-sm border-black">
-                Feel the Innovation
-              </button> */}
-                <Button>Get Started Now</Button>
+                <Link href="sign-up">
+                  <Button>Get Started Now</Button>
+                </Link>
               </div>
             </div>
             <div className="text-center flex justify-center items-center">

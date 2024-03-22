@@ -1,5 +1,7 @@
 import React from "react";
 import DiscoverCard from "../../../components/Shared/DiscoverCard";
+import chatgpt from "../../../app/assets/chatgpt.jpg";
+import prompt from "../../../app/assets/prompt.jpg";
 
 const Discover = () => {
   return (
@@ -30,9 +32,10 @@ const Discover = () => {
               <div className="mt-5">
                 <DiscoverCard
                   title="AI Chatbot"
-                  text="Titan AI enables students to seamlessly integrate AI models with an easy and safe API, quickly develop prompts, and transform ideas into reality."
+                  text=" Our chatbot service utilizes advanced artificial intelligence algorithms to provide instant and personalized responses to user queries. Whether it's customer support, lead generation, or information retrieval, our chatbot streamlines communication and enhances user experience."
                   link="/Ask"
                   subtitle="Empowering Students to study with AI"
+                  img={chatgpt}
                 />
                 <DiscoverCard
                   title="Prompts Management"
@@ -40,19 +43,22 @@ const Discover = () => {
                   link="/Prompts"
                   subtitle="Discover & Share
                   AI-Powered Prompts"
+                  img={prompt}
                 />
                 <DiscoverCard
                   title="Paraphrasing Tools"
-                  text="Discover how to make writing painless anywhere. Seamlessly integrate Titan AI into your favorite tools.
+                  text=" Our paraphrasing tool employs cutting-edge algorithms to rephrase text while maintaining clarity and original meaning. It's perfect for content creators, students, and professionals looking to avoid plagiarism or refresh their content.
                   "
-                  link=""
-                  subtitle=""
+                  link="Paraphrase"
+                  subtitle="Automatic text analysis, Context-aware rewriting, Multiple language support."
+                  img={chatgpt}
                 />
                 <DiscoverCard
                   title="Summarizing Tools"
-                  text=""
-                  link=""
-                  subtitle=""
+                  text="Our summarizing tool condenses lengthy documents, articles, or texts into concise summaries without losing essential information. It's ideal for extracting key points, conducting research, or preparing presentations."
+                  link="Summarize"
+                  subtitle="AI-powered summarization, Extractive and abstractive summarization techniques."
+                  img={chatgpt}
                 />
               </div>
             </div>
