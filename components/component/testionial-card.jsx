@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import User from "../../app/assets/user-1.jpg";
 
-function TestimonialCard() {
+function TestimonialCard({ name, text }) {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader className="p-6 flex items-start gap-6">
@@ -30,16 +30,14 @@ function TestimonialCard() {
         </div>
         <CardContent className="p-0 flex-1">
           <div className="grid gap-1.5">
-            <CardTitle className="text-base">Jane Smith</CardTitle>
-            <CardDescription className="text-xs">
-              Verified owner
-            </CardDescription>
+            <CardTitle className="text-base">{name}</CardTitle>
+            <CardDescription className="text-xs">Student</CardDescription>
           </div>
           <div className="flex items-center gap-2">
             <StarIcon className="w-4 h-4 fill-primary" />
             <StarIcon className="w-4 h-4 fill-primary" />
             <StarIcon className="w-4 h-4 fill-primary" />
-            <StarIcon className="w-4 h-4 fill-muted stroke-muted-foreground" />
+            <StarIcon className="w-4 h-4 fill-primary" />
             <StarIcon className="w-4 h-4 fill-muted stroke-muted-foreground" />
             <span className="text-sm ml-auto text-gray-500 dark:text-gray-400">
               3.2
@@ -48,10 +46,7 @@ function TestimonialCard() {
         </CardContent>
       </CardHeader>
       <CardContent className="p-6 text-sm border-t">
-        <p>
-          I really enjoyed my experience with the product. It was easy to use
-          and helped me save time on my daily tasks.
-        </p>
+        <p>{text}</p>
       </CardContent>
     </Card>
   );

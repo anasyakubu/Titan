@@ -3,6 +3,7 @@ import HomeHeader from "../Section/HomeHeader/HomeHeader";
 import AboutSection from "../Section/AboutSection/AboutSection";
 import Testimonial from "../Section/Testimonial/Testimonial";
 import Discover from "../Section/Discover/Discover";
+import Feature from "../Section/Feature/Feature";
 import Footer from "../Section/Footer/Footer";
 
 const page = () => {
@@ -13,6 +14,7 @@ const page = () => {
       <Discover />
       <Testimonial />
       {/* <MacbookScrollDemo /> */}
+      <Feature />
       <Footer />
     </div>
   );

@@ -4,6 +4,7 @@ import chatgpt from "../../../app/assets/chatgpt.jpg";
 import prompt from "../../../app/assets/prompt.jpg";
 import Summarize from "../../../app/assets/Summarize.jpg";
 import Paraphrase from "../../../app/assets/Paraphrase.jpg";
+import "./Discover.scss";
 
 const Discover = () => {
   return (
