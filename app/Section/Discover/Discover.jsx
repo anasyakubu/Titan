@@ -2,6 +2,8 @@ import React from "react";
 import DiscoverCard from "../../../components/Shared/DiscoverCard";
 import chatgpt from "../../../app/assets/chatgpt.jpg";
 import prompt from "../../../app/assets/prompt.jpg";
+import Summarize from "../../../app/assets/Summarize.jpg";
+import Paraphrase from "../../../app/assets/Paraphrase.jpg";
 
 const Discover = () => {
   return (
@@ -51,14 +53,14 @@ const Discover = () => {
                   "
                   link="Paraphrase"
                   subtitle="Automatic text analysis, Context-aware rewriting, Multiple language support."
-                  img={chatgpt}
+                  img={Paraphrase}
                 />
                 <DiscoverCard
                   title="Summarizing Tools"
                   text="Our summarizing tool condenses lengthy documents, articles, or texts into concise summaries without losing essential information. It's ideal for extracting key points, conducting research, or preparing presentations."
                   link="Summarize"
                   subtitle="AI-powered summarization, Extractive and abstractive summarization techniques."
-                  img={chatgpt}
+                  img={Summarize}
                 />
               </div>
             </div>
