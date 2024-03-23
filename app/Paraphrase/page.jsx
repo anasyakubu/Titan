@@ -1,5 +1,4 @@
 import React from "react";
-
 import ParaphraseHeader from "../Section/ParaphraseHeader/ParaphraseHeader";
 import ParaphraseText from "../Section/ParaphraseText/ParaphraseText";
 

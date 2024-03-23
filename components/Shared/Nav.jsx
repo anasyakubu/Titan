@@ -9,7 +9,7 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Ask", href: "#" },
+  { name: "Ask", href: "/Ask" },
   { name: "Prompts", href: "/Prompt" },
   { name: "Paraphrase", href: "/Paraphrase" },
   { name: "Summarize", href: "/Summarize" },
