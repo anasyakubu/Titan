@@ -3,6 +3,7 @@ import HomeHeader from "../Section/HomeHeader/HomeHeader";
 import AboutSection from "../Section/AboutSection/AboutSection";
 import Testimonial from "../Section/Testimonial/Testimonial";
 import Discover from "../Section/Discover/Discover";
+import Footer from "../Section/Footer/Footer";
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
       <Discover />
       <Testimonial />
       {/* <MacbookScrollDemo /> */}
+      <Footer />
     </div>
   );
 };

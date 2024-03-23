@@ -1,0 +1,19 @@
+.Footer {
+  .icons {
+    .icon {
+      transition: 0.4s all ease-in-out;
+
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .Footer {
+    .p-10 {
+      padding: 2%;
+    }
+  }
+}
