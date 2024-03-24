@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { useUser } from "@clerk/nextjs";
 import "./Chat.scss";
 import Avater from "../../assets/user-1.jpg";
 import Image from "next/image";
@@ -15,6 +16,15 @@ const Chat = () => {
   const [textPar, setTextPar] = useState("");
   const [aiResponse, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { isLoaded, isSignedIn, user } = useUser();
+  //console.log(user.emailAddresses[0].emailAddress);
+  // console.log(user.emailAddresses.emailAddress);
+  //console.log(user.lastSignInAt);
+
+  if (!isLoaded || !isSignedIn) {
+    return null;
+  }
 
   /**
    * Generative AI Call to fetch text insights
@@ -52,13 +62,23 @@ const Chat = () => {
               Hi! How can I help you today?
             </div>
             <div class="message receiver-message">
-              <Image src={Avater} alt="Receiver Avatar" class="avatar" />
+              <Image
+                src={user.imageUrl}
+                height={48}
+                width={48}
+                alt="Receiver Avatar"
+                class="avatar"
+              />
               {textPar}
             </div>
-            <div class="message sender-message">
-              <Image src={Avater} alt="Sender Avatar" class="avatar" />
-              {aiResponse}
-            </div>
+            {loading === true && aiResponse === "" ? (
+              <p className="text-sm text-black">Loading ...</p>
+            ) : (
+              <div class="message sender-message">
+                <Image src={Avater} alt="Sender Avatar" class="avatar" />
+                {aiResponse}
+              </div>
+            )}
           </div>
 
           <div class="message">
