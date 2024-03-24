@@ -6,6 +6,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firestore";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import Footer from "../Section/Footer/Footer";
 
 const CreatePrompt = () => {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -76,6 +77,7 @@ const CreatePrompt = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
