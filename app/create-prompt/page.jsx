@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Nav from "../../components/Shared/Nav";
+import "./page.scss";
 import Form from "../../components/Shared/Form";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firestore";

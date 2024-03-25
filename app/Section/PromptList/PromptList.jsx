@@ -70,6 +70,7 @@ const PromptList = () => {
                       images={prompt.creatorPhotoUrl}
                       email={prompt.creatorEmail}
                       promptText={prompt.prompt}
+                      tag={prompt.tag}
                     />
                   </div>
                 ))}

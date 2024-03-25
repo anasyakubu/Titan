@@ -19,10 +19,11 @@ const PromptHeader = () => {
                 Write & Share Prompts :
               </h1>
               <p className="mt-5 text-black text-md">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
-                eaque praesentium doloremque deserunt illum, adipisci amet,
-                explicabo qui odio tempora sed fugiat assumenda laboriosam
-                numquam ut officia nobis earum. Accusamus.
+                Enter your prompts below to experience the power of our AI App
+                Prompt Management feature. Whether it`s crafting customer
+                service scripts, optimizing marketing campaigns, or enhancing
+                user engagement, our platform ensures your prompts are dynamic,
+                effective, and tailored to your needs.
               </p>
               <Link className="mt-5" href="/create-prompt">
                 <Button className="mt-5">Create a Prompts</Button>

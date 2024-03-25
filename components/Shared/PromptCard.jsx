@@ -11,7 +11,7 @@ import Image from "next/image";
 import User from "../../app/assets/user-1.jpg";
 import Copy from "../../app/assets/copy.svg";
 
-function PromptCard({ name, images, email, promptText }) {
+function PromptCard({ name, images, email, promptText, tag }) {
   return (
     <Card className="w-full max-w-sm mt-5">
       <CardHeader className="p-6 flex items-start gap-6">
@@ -34,6 +34,7 @@ function PromptCard({ name, images, email, promptText }) {
             <CardTitle className="text-base">{name}</CardTitle>
             <CardDescription className="text-xs">{email}</CardDescription>
           </div>
+
           {/* <div className="flex items-center gap-2">
             <StarIcon className="w-4 h-4 fill-primary" />
             <StarIcon className="w-4 h-4 fill-primary" />
@@ -48,8 +49,11 @@ function PromptCard({ name, images, email, promptText }) {
       </CardHeader>
       <CardContent className="p-6 text-sm border-t">
         <p>{promptText}</p>
-        <p className="mt-5">
+        <p className="mt-5 flex justify-between">
           <Image className="" src={Copy} alt="Copy" />
+          <CardDescription className="text-xs text-black">
+            {tag}
+          </CardDescription>
         </p>
       </CardContent>
     </Card>
