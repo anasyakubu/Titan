@@ -13,7 +13,7 @@ const navigation = [
   { name: "Prompts", href: "/Prompt" },
   { name: "Paraphrase", href: "/Paraphrase" },
   { name: "Summarize", href: "/Summarize" },
-  { name: "Contact", href: "#" },
+  // { name: "Contact", href: "#" },
 ];
 
 export default function Nav() {
