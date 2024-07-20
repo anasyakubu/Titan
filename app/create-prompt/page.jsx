@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import Footer from "../Section/Footer/Footer";
 
 const CreatePrompt = () => {
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { isLoaded, isSignedIn, user } = useUser;
   //console.log(user.emailAddresses[0].emailAddress);
   // console.log(user.emailAddresses.emailAddress);
   //console.log(user.lastSignInAt);
