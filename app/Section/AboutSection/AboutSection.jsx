@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Frame from "../../assets/frame-3.png";
 import "./AboutSection.scss";
 import { HeroScroll } from "../HeroScroll/HeroScroll";
 
