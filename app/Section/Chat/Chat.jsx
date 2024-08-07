@@ -16,9 +16,6 @@ const Chat = () => {
   const [loading, setLoading] = useState(false);
 
   const { isLoaded, isSignedIn, user } = useUser();
-  //console.log(user.emailAddresses[0].emailAddress);
-  // console.log(user.emailAddresses.emailAddress);
-  //console.log(user.lastSignInAt);
 
   if (!isLoaded || !isSignedIn) {
     return null;
@@ -53,13 +50,13 @@ const Chat = () => {
         <div className="flex justify-center text-center">
           <Image className="w-32" src={Logo} alt="Logo" />
         </div>
-        <div class="chat-container p-2">
-          <div class="message-container">
-            <div class="message sender-message">
+        <div className="chat-container p-2">
+          <div className="message-container">
+            <div className="message sender-message">
               <Image src={Avater} alt="Sender Avatar" class="avatar" />
               Hi! How can I help you today?
             </div>
-            <div class="message receiver-message">
+            <div className="message receiver-message">
               <Image
                 src={user.imageUrl}
                 height={48}
@@ -72,14 +69,14 @@ const Chat = () => {
             {loading === true && aiResponse === "" ? (
               <p className="text-sm text-black">Loading ...</p>
             ) : (
-              <div class="message sender-message">
-                <Image src={Avater} alt="Sender Avatar" class="avatar" />
+              <div className="message sender-message">
+                <Image src={Avater} alt="Sender Avatar" className="avatar" />
                 {aiResponse}
               </div>
             )}
           </div>
 
-          <div class="message">
+          <div className="message">
             <input
               type="text"
               placeholder="Type your prompts..."
