@@ -5,9 +5,7 @@ import { Button } from "../../../components/ui/button";
 import "./ParaphraseText.scss";
 
 const ParaphraseText = () => {
-  const genAI = new GoogleGenerativeAI(
-    "AIzaSyCzHfb2mXLWWYbjVLUANexHlqB7SvpePy4"
-  );
+  const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY);
 
   const [textPar, setTextPar] = useState("");
   const [aiResponse, setResponse] = useState("");
